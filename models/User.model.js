@@ -7,9 +7,9 @@ const UserSchema = new Schema({
     lastName: { type: String, required: true },
     email: { type: String, required: true, unique: true },
     password: { type: String, required: true },
-    favoritos: [Object],
-    verDespues: [Object],
-    vistas: [Object]
+    favoritos: [{ type: Object }],
+    verDespues: [{ type: Object }],
+    vistas: [{ type: Object }]
 });
 
 UserSchema.plugin(mongoosePaginate);
