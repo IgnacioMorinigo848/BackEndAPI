@@ -6,12 +6,12 @@ import {
 
 export const getFavorites = async (req, res) => {
     try {
-        const userId = req.body.userId; // Cambiado de ObjetId a userId
+        const {userId} = req.body; 
         const favorites = await getFavoritesService(userId);
         return res.status(200).json({ favorites });
     } catch (error) {
-        console.error(error);
-        res.status(500).json({ message: "Error retrieving favorites" });
+        if (error.message === "User not found.") return res.status(404).json(error.message);
+        res.status(500).json(error.message);
     }
 };
 
@@ -29,8 +29,7 @@ export const addFavorites = async (req, res) => {
         const response = await addFavoritesService(userId, movie);
         return res.status(200).json({ response });
     } catch (error) {
-        console.error(error);
-        res.status(500).json({ message: "Error trying to add favorites" });
+        res.status(400).json(error.message);
     }
 };
 
@@ -43,8 +42,7 @@ export const deleteFavorites = async (req, res) => {
        return res.status(200).json({ response });
 
     } catch (error) {
-        console.error(error);
-        res.status(500).json({ message: "Error removing film from favorites" });
+        res.status(400).json(error.message);
     }
 
 };
@@ -55,8 +53,8 @@ export const getWatchLater = async (req, res) => {
         const watchLater = await getWatchLaterService(userId);
         return res.status(200).json({ watchLater });
     } catch (error) {
-        console.error(error);
-        res.status(500).json({ message: "Error retrieving watchLater" });
+        if (error.message === "User not found.") return res.status(404).json(error.message);
+        res.status(500).json(error.message);
     }
 };
 
@@ -75,8 +73,7 @@ export const addWatchLater = async (req, res) => {
         const response = await addWatchLaterService(userId, movie);
         return res.status(200).json({ response });
     } catch (error) {
-        console.error(error);
-        res.status(500).json({ message: "Error trying to add watchLater" });
+        res.status(400).json(error.message);
     }
 };
 
@@ -89,20 +86,19 @@ export const deleteWatchLater = async (req, res) => {
         return res.status(200).json({ response });
  
      } catch (error) {
-         console.error(error);
-         res.status(500).json({ message: "Error removing film from watchLater" });
+         res.status(500).json(error.message);
      }
  
 };
 
 export const getWatched = async (req, res) => {
     try {
-        const userId = req.body.userId;
+        const {userId} = req.body;
         const watched = await getWatchedService(userId);
         return res.status(200).json({ watched });
     } catch (error) {
-        console.error(error);
-        res.status(500).json({ message: "Error retrieving watched" });
+        if (error.message === "User not found.") return res.status(404).json(error.message);
+        res.status(500).json(error.message);
     }
 };
 
@@ -121,8 +117,7 @@ export const addWatched = async (req, res) => {
         const response = await addWatchedService(userId, movie);
         return res.status(200).json({ response });
     } catch (error) {
-        console.error(error);
-        res.status(500).json({ message: "Error trying to add watched" });
+        res.status(500).json(error.message);
     }
 };
 
@@ -135,7 +130,6 @@ export const deleteWatched = async (req, res) => {
         return res.status(200).json({ response });
  
      } catch (error) {
-         console.error(error);
-         res.status(500).json({ message: "Error removing film from watched" });
+         res.status(500).json(error.message);
      }
 };

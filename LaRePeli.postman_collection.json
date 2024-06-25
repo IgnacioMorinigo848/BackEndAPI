@@ -1,0 +1,266 @@
+{
+	"info": {
+		"_postman_id": "7a57fb94-2662-4ae7-a975-64c9e5178b39",
+		"name": "LaRePeli",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "33571981"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "getUser",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\":\"6669f704c826d62b4247d282\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/user"
+					},
+					"response": []
+				},
+				{
+					"name": "signUp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Camila\",\r\n    \"lastName\":\"Castiloo\",\r\n    \"email\":\"camcastillo@uade.edu.ar\",\r\n    \"password\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/auth/signup"
+					},
+					"response": []
+				},
+				{
+					"name": "signIn",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"camcastillo@uade.edu.ar\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/auth/signin"
+					},
+					"response": []
+				},
+				{
+					"name": "updatePassword",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\":\"6669f704c826d62b4247d282\",\r\n    \"password\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/user/"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Lists",
+			"item": [
+				{
+					"name": "addFavorites",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\":\"6669f704c826d62b4247d282\",\r\n    \"_id\": 1011985,\r\n    \"title\": \"Kung Fu Panda 4\",\r\n    \"release_date\": \"2024-03-02\",\r\n    \"overview\": \"Po is gearing up to become the spiritual leader of his Valley of Peace, but also needs someone to take his place as Dragon Warrior. As such, he will train a new kung fu practitioner for the spot and will encounter a villain called the Chameleon who conjures villains from the past.\",\r\n    \"poster_path\": \"/kDp1vUBnMpe8ak4rjgl3cLELqjU.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/lists/favorites"
+					},
+					"response": []
+				},
+				{
+					"name": "getFavorites",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\":\"6669f704c826d62b4247d282\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/lists/favorites"
+					},
+					"response": []
+				},
+				{
+					"name": "deleteFavorite",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\":\"6669f704c826d62b4247d282\",\r\n    \"_id\": 1011985,\r\n    \"title\": \"Kung Fu Panda 4\",\r\n    \"release_date\": \"2024-03-02\",\r\n    \"overview\": \"Po is gearing up to become the spiritual leader of his Valley of Peace, but also needs someone to take his place as Dragon Warrior. As such, he will train a new kung fu practitioner for the spot and will encounter a villain called the Chameleon who conjures villains from the past.\",\r\n    \"poster_path\": \"/kDp1vUBnMpe8ak4rjgl3cLELqjU.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/lists/favorites"
+					},
+					"response": []
+				},
+				{
+					"name": "addWatched",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\":\"6669f704c826d62b4247d282\",\r\n    \"_id\": 1011985,\r\n    \"title\": \"Kung Fu Panda 4\",\r\n    \"release_date\": \"2024-03-02\",\r\n    \"overview\": \"Po is gearing up to become the spiritual leader of his Valley of Peace, but also needs someone to take his place as Dragon Warrior. As such, he will train a new kung fu practitioner for the spot and will encounter a villain called the Chameleon who conjures villains from the past.\",\r\n    \"poster_path\": \"/kDp1vUBnMpe8ak4rjgl3cLELqjU.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/lists/watched"
+					},
+					"response": []
+				},
+				{
+					"name": "getWatched",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\":\"6669f704c826d62b4247d282\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/lists/watched"
+					},
+					"response": []
+				},
+				{
+					"name": "deleteWatched",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\":\"6669f704c826d62b4247d282\",\r\n    \"_id\": 1011985,\r\n    \"title\": \"Kung Fu Panda 4\",\r\n    \"release_date\": \"2024-03-02\",\r\n    \"overview\": \"Po is gearing up to become the spiritual leader of his Valley of Peace, but also needs someone to take his place as Dragon Warrior. As such, he will train a new kung fu practitioner for the spot and will encounter a villain called the Chameleon who conjures villains from the past.\",\r\n    \"poster_path\": \"/kDp1vUBnMpe8ak4rjgl3cLELqjU.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/lists/watched"
+					},
+					"response": []
+				},
+				{
+					"name": "addWatchLater",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\":\"6669f704c826d62b4247d282\",\r\n    \"_id\": 984324,\r\n    \"title\": \"The wages of fear\",\r\n    \"release_date\": \" 2024-03-02 \",\r\n    \"overview\": \"When an explosion at an oil well threatens hundreds of lives, a crack team is called upon to make a deadly desert crossing with nitroglycerine in tow. \",\r\n    \"poster_path\": \"/jFK2ZLQUzo9pea0jfMCHDfvWsx7.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/lists/watchLater"
+					},
+					"response": []
+				},
+				{
+					"name": "getWatchLater",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\":\"6669f704c826d62b4247d282\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/lists/watchLater"
+					},
+					"response": []
+				},
+				{
+					"name": "deleteWatchLater",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\":\"6669f704c826d62b4247d282\",\r\n    \"_id\": 984324,\r\n    \"title\": \"The wages of fear\",\r\n    \"release_date\": \" 2024-03-02 \",\r\n    \"overview\": \"When an explosion at an oil well threatens hundreds of lives, a crack team is called upon to make a deadly desert crossing with nitroglycerine in tow. \",\r\n    \"poster_path\": \"/jFK2ZLQUzo9pea0jfMCHDfvWsx7.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/lists/watchLater"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
